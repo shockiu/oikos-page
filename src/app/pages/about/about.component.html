@@ -1,0 +1,53 @@
+<main class="row"> 
+    <section class="col s12 m12 grey lighten-3">
+        <h1 class="center">Sobre Oikos</h1>
+        <article >
+            <div class="row">
+                <div class="col s12 m6" *ngFor="let art of aboutDataArticle">
+                    <div class="hoverable card white animated fadeIn delay-1s">
+                        <div class="card-image">
+                            <img src="../../../assets/img/{{ art.urlImage }}.jpg" alt="Equipos Oikos">
+                            <span class="card-title yellow-oikos">{{ art.title }}</span>
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                {{ art.parraf }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" *ngFor="let ani of aboutDataArticle2">
+                  <div class="col s12 m6">
+                    <div class="hoverable nosotros-box z-depth-2 white animated fadeIn delay-3s">
+                        <div class="center mt-2">
+                            <i class="oikos-text fas fa-{{  ani.cardFigure }} large"></i><h2 class="oikos-text">{{ ani.title }}</h2>
+                        </div>
+                        <p>
+                          {{ ani.parraf }}
+                        </p>      
+                    </div>
+                  </div>
+                </div>       
+            </div>
+        </article>
+    </section>
+    
+    <aside class="col s12 m12 grey darken-3 z-depth-5 animated zoomInRight delay-5s">
+      <h3 class="center white-text">Unos principios y valores que nos guían</h3>
+      <div class="row" *ngFor="let aside of aboutDataAside">
+    
+          <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content white-text">
+              <span class="card-title grey-text text-darken-1 center">{{ aside.title }}</span>
+              <p class="grey-text text-darken-1">{{ aside.parraf }}</p>
+            </div>
+    
+          </div>
+          </div>
+    
+      </div>
+    
+    </aside>
+    
+</main>

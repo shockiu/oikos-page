@@ -1,0 +1,46 @@
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper black">
+          <a href="#" class="brand-logo"><img class="logo" src="../../../assets/img/logo-oikos.png" alt="Oikos UCV"></a>
+          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars right"></i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="waves-effect waves-orange"><a href="#"><i class="fas fa-home tiny"></i>Inicio</a></li>
+            <li class="waves-effect waves-orange"><a routerLink="/about"><i class="fas fa-users tiny"></i>Nosotros</a></li>
+            <li class=""><a class="dropdown-trigger waves-effect waves-orange" data-target="descargas">
+            <i class="fas fa-cloud-download-alt tiny"></i>Descargas</a>
+            </li><!-- Dropdown Trigger de descargas -->
+            <li class=""><a class="dropdown-trigger waves-effect waves-orange" data-target="actividades">
+            <i class="fas fa-calendar-alt tiny"></i>Actividades</a>
+            </li><!-- Dropdown Trigger de descargas -->      
+            <li class="waves-effect waves-orange"><a routerLink="/news"><i class="far fa-newspaper tiny"></i>Noticias/Blog</a></li>
+            <li class="waves-effect waves-orange"><a routerLink="/contact"><i class="far fa-envelope tiny"></i>Contactar</a></li>
+          </ul>
+        </div>
+      </nav>
+</div>
+  
+<header>
+        <!-- Dropdown Structure Descarga normal -->
+        <ul id="descargas" class="dropdown-content">
+          <li class="waves-effect waves-orange"><a routerLink="/documents"><i class="fas fa-file-download tiny"></i>Documentos</a></li>
+          <li class="waves-effect waves-orange"><a routerLink="/material"><i class="fas fa-book tiny"></i>Material Académico</a></li>
+        </ul>
+      
+        <!-- Dropdown Structure Descarga normal -->
+        <ul id="actividades" class="dropdown-content">
+        <li class="waves-effect waves-orange"><a routerLink="/inscriptions"><i class="fas fa-address-card tiny"></i>Inscripciones Regulares</a></li>
+        <li class="waves-effect waves-orange"><a routerLink="/events"><i class="fas fa-bullhorn tiny"></i>Foros,eventos y más...</a></li>
+        </ul>
+  
+        <ul id="slide-out" class="sidenav">
+          <li><a class="waves-effect waves-orange" href="#"><i class="fas fa-home tiny"></i>Inicio</a></li>
+          <li><a class="waves-effect waves-orange" routerLink="/about"><i class="fas fa-users tiny"></i>Nosotros</a></li>
+          <li><a class="waves-effect waves-orange" routerLink="/material"><i class="fas fa-book tiny"></i>Material Académico</a></li>
+          <li><a class="waves-effect waves-orange" routerLink="/documents"><i class="fas fa-file-download tiny"></i>Documentos</a></li> 
+          <li><a class="waves-effect waves-orange" routerLink="/inscriptions"><i class="fas fa-address-card tiny"></i>Inscripciones Regulares</a></li>
+          <li><a class="waves-effect waves-orange" routerLink="/events"><i class="fas fa-bullhorn tiny"></i>Foros,eventos y más...</a></li>
+          <!-- <li><a class="waves-effect waves-orange" href="#"><i class="fas fa-university tiny"></i>R. Consejo de Escuela</a></li>-->       
+          <li><a class="waves-effect waves-orange" routerLink="/news"><i class="far fa-newspaper tiny"></i> Noticias/Blog</a></li>
+          <li><a class="waves-effect waves-orange" routerLink="/contact"><i class="far fa-envelope tiny"></i> Contactar</a></li>
+      </ul>
+</header>
