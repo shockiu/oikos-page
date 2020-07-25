@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  urlData = 'https://oikospage.firebaseio.com';
+  urlData = 'https://oikos-page.firebaseio.com';
 
   constructor(private http: HttpClient) { }
 
