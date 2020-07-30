@@ -1,6 +1,11 @@
+<mz-spinner
+  [color]="'blue'"
+  [size]="'big'"
+  *ngIf="!aboutDataArticle && !aboutDataArticle2 && !aboutDataAside">
+</mz-spinner>
 <main class="row"> 
     <section class="col s12 m12 grey lighten-3">
-        <h1 class="center">Sobre Oikos</h1>
+        <h1 class="center" *ngIf="aboutDataArticle && aboutDataArticle2 && aboutDataAside">Sobre Oikos</h1>
         <article >
             <div class="row">
                 <div class="col s12 m6" *ngFor="let art of aboutDataArticle">
@@ -33,7 +38,7 @@
     </section>
     
     <aside class="col s12 m12 grey darken-3 z-depth-5 animated zoomInRight delay-5s">
-      <h3 class="center white-text">Unos principios y valores que nos guían</h3>
+      <h3 class="center white-text" *ngIf="aboutDataArticle && aboutDataArticle2 && aboutDataAside">Unos principios y valores que nos guían</h3>
       <div class="row" *ngFor="let aside of aboutDataAside">
     
           <div class="col s12 m4">

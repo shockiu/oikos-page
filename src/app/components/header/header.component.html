@@ -1,3 +1,4 @@
+<!--
 <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper black">
@@ -8,25 +9,24 @@
             <li class="waves-effect waves-orange"><a routerLink="/about"><i class="fas fa-users tiny"></i>Nosotros</a></li>
             <li class=""><a class="dropdown-trigger waves-effect waves-orange" data-target="descargas">
             <i class="fas fa-cloud-download-alt tiny"></i>Descargas</a>
-            </li><!-- Dropdown Trigger de descargas -->
+            </li>
             <li class=""><a class="dropdown-trigger waves-effect waves-orange" data-target="actividades">
             <i class="fas fa-calendar-alt tiny"></i>Actividades</a>
-            </li><!-- Dropdown Trigger de descargas -->      
+            </li>   
             <li class="waves-effect waves-orange"><a routerLink="/news"><i class="far fa-newspaper tiny"></i>Noticias/Blog</a></li>
             <li class="waves-effect waves-orange"><a routerLink="/contact"><i class="far fa-envelope tiny"></i>Contactar</a></li>
           </ul>
         </div>
       </nav>
 </div>
-  
+
 <header>
-        <!-- Dropdown Structure Descarga normal -->
+     
         <ul id="descargas" class="dropdown-content">
           <li class="waves-effect waves-orange"><a routerLink="/documents"><i class="fas fa-file-download tiny"></i>Documentos</a></li>
           <li class="waves-effect waves-orange"><a routerLink="/material"><i class="fas fa-book tiny"></i>Material Académico</a></li>
         </ul>
       
-        <!-- Dropdown Structure Descarga normal -->
         <ul id="actividades" class="dropdown-content">
         <li class="waves-effect waves-orange"><a routerLink="/inscriptions"><i class="fas fa-address-card tiny"></i>Inscripciones Regulares</a></li>
         <li class="waves-effect waves-orange"><a routerLink="/events"><i class="fas fa-bullhorn tiny"></i>Foros,eventos y más...</a></li>
@@ -39,8 +39,67 @@
           <li><a class="waves-effect waves-orange" routerLink="/documents"><i class="fas fa-file-download tiny"></i>Documentos</a></li> 
           <li><a class="waves-effect waves-orange" routerLink="/inscriptions"><i class="fas fa-address-card tiny"></i>Inscripciones Regulares</a></li>
           <li><a class="waves-effect waves-orange" routerLink="/events"><i class="fas fa-bullhorn tiny"></i>Foros,eventos y más...</a></li>
-          <!-- <li><a class="waves-effect waves-orange" href="#"><i class="fas fa-university tiny"></i>R. Consejo de Escuela</a></li>-->       
+         
           <li><a class="waves-effect waves-orange" routerLink="/news"><i class="far fa-newspaper tiny"></i> Noticias/Blog</a></li>
           <li><a class="waves-effect waves-orange" routerLink="/contact"><i class="far fa-envelope tiny"></i> Contactar</a></li>
       </ul>
 </header>
+-->
+<div class="navbar-fixed">
+  <mz-navbar [navbarClass]="'nav-wrapper black'">
+    <a routerLink="/about" class="brand-logo"><img class="logo" src="../../../assets/img/logo-oikos.png" alt="Oikos UCV"></a>
+    <mz-navbar-item-container [align]="'right'" class="right hide-on-med-and-down">
+      <ul>
+        <mz-navbar-item [itemClass]="'waves-effect waves-orange'"><a routerLink='/'>INICIO</a>
+        </mz-navbar-item>
+        <mz-navbar-item [itemClass]="'waves-effect waves-orange'"><a routerLink="/about">NOSOTROS</a></mz-navbar-item>
+        <mz-navbar-item [itemClass]="'waves-effect waves-orange'"><a id="demo-descargas">DESCARGAS</a>
+        
+        </mz-navbar-item>
+        <mz-navbar-item [itemClass]="'waves-effect waves-orange'"><a id="demo-actividades">ACTIVIDADES</a>
+         
+        </mz-navbar-item>
+        <mz-navbar-item [itemClass]="'waves-effect waves-orange'"><a routerLink="/news">NOTICIAS/BLOG</a></mz-navbar-item>
+        <mz-navbar-item [itemClass]="'waves-effect waves-orange'"><a routerLink="/contact">CONTACTAR</a></mz-navbar-item>
+      </ul>
+    </mz-navbar-item-container>
+  </mz-navbar>
+</div>
+
+
+<!-- DROPDOWN DESCARGAS -->
+<mz-dropdown
+  class="dropdown-content"
+  [id]="'dropdowndescargas'"
+  [align]="'left'"
+  [belowOrigin]="false"
+  [constrainWidth]="true"
+  [dropdownButtonId]="'demo-descargas'"
+  [gutter]="true"
+  [hover]="true"
+  [inDuration]="300"
+  [outDuration]="300"
+>
+  <mz-dropdown-item ><a routerLink="/documents">Documentos</a></mz-dropdown-item>
+  <mz-dropdown-item ><a routerLink="/material">Material Académico</a></mz-dropdown-item>
+  <mz-dropdown-divider></mz-dropdown-divider>
+</mz-dropdown>
+
+<!-- DROPDOWN ACTIVIADADES -->
+<mz-dropdown
+  class="dropdown-content"
+  [id]="'dropdownactividades'"
+  [align]="'left'"
+  [belowOrigin]="false"
+  [constrainWidth]="true"
+  [dropdownButtonId]="'demo-actividades'"
+  [gutter]="true"
+  [hover]="true"
+  [inDuration]="300"
+  [outDuration]="300"
+  [stopPropagation]="true"
+ >
+  <mz-dropdown-item class="waves-effect waves-orange"><a routerLink="/inscriptions">Inscripciones Regulares</a></mz-dropdown-item>
+  <mz-dropdown-item class="waves-effect waves-orange"><a routerLink="/events">Foros,eventos y más...</a></mz-dropdown-item>
+  <mz-dropdown-divider></mz-dropdown-divider>
+</mz-dropdown>

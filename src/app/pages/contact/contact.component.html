@@ -4,36 +4,59 @@
       <article class="container">
         <h2 class="center">Si tienes alguna duda sobre el consejo de escuela, control de estudios, inscripciones regulares, nuevo ingresos, entre otros... puedes llenar este formulario y te atenderemos con gusto.</h2>
         <div class="divider"></div>
-        <div class="row grey lighten-5">
-          <form class="col s12">
+        <div >
+          <form class="col s12" [formGroup]="emailForm" novalidate>
             <div class="row">
-              <div class="input-field col s12">
-                <i class="fas fa-user-graduate prefix"></i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Nombre</label>
+              <div>
+                <mz-input-container class="col s12 m6">
+                  <input id="icon_prefix"
+                    mz-input mz-validation required 
+                    type="text"
+                    [errorMessageResource]="errorMessageResource.name"
+                    formControlName="name"
+                    [label]="'Nombre'">
+                </mz-input-container>
               </div>
-              <div class="input-field col s12">
-                <i class="fas fa-phone-square-alt prefix"></i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">Número de Teléfono</label>
+              <div>
+                <mz-input-container class="col s12 m6">
+                  <input id="icon_telephone" 
+                    type="tel"
+                    [errorMessageResource]="errorMessageResource.phone"  
+                    formControlName="phone"
+                    mz-input mz-validation required
+                    [label]="'Telefono'">
+                </mz-input-container>
               </div>
-              <div class="input-field col s12">
-                <i class="far fa-envelope prefix"></i>
-                <input id="icon-mail" type="text" class="validate">
-                <label for="icon-mail">Correo Electronico</label>
+              <div>
+                <mz-input-container class="col s12 m6">
+                  <input id="icon-mail" type="text" 
+                    [errorMessageResource]="errorMessageResource.email" 
+                    formControlName="email"
+                    mz-input mz-validation required
+                    [label]="'Email'">
+                </mz-input-container>
               </div>       
-              <div class="input-field col s12">
-                <i class="far fa-comment-dots prefix"></i>
-                <input id="icon_motivo" type="text" class="validate">
-                <label for="icon_motivo">Motivo</label>
+              <div>
+                <mz-input-container class="col s12 m6">
+                  <input id="icon_motivo" type="text" 
+                    [errorMessageResource]="errorMessageResource.subject" 
+                    formControlName="subject"
+                    mz-input mz-validation required
+                    [label]="'Motivo'">
+                </mz-input-container>
               </div>   
-                <div class="input-field col s12">
-                  <textarea id="textarea2" class="materialize-textarea" data-length="180"></textarea>
-                  <label for="textarea2">Descripción</label>
+                <div>
+                  <mz-input-container class="col s12 m6">
+                    <textarea id="textarea2" class="materialize-textarea" 
+                      data-length="180" formControlName="description"
+                      [errorMessageResource]="errorMessageResource.description" 
+                      mz-textarea mz-validation required
+                      [label]="'Descripción'"></textarea>
+                  </mz-input-container>
                 </div>                 
             </div>
             <div class="center">
-                  <button class="btn black waves-effect waves-orange" type="submit" name="action">Enviar
+                  <button class="btn black waves-effect waves-orange" type="submit" name="action" (click)="sendEmail(emailForm.value)" [disabled]="emailForm.invalid">Enviar
                   <i class="far fa-paper-plane right"></i>
                 </button>        
             </div>
